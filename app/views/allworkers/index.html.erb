@@ -2,5 +2,12 @@
 <div>
   <% @workers.each do |worker| %> 
 
+    <h4>
+      <%= worker.name %>
+    </h4>
+
+    <%= link_to "Edit", edit_worker_registration_path(worker) %>
+    <%= link_to "Sign Out", destroy_worker_session_path, method: :delete %>
+
   <% end %>
 </div>
