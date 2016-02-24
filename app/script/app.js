@@ -16,6 +16,6 @@
   }
 
   angular
-    .module('schedule', 'ui.router')
+    .module('schedule', ['ui.router'])
     .config(config);
 })();
