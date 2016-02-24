@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get 'home/schedule'
+
   devise_for :bosses
   devise_for :workers, controllers: { registrations: 'workers/registrations' }
 
