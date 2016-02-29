@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+//= require angular
+//= require angular-rails-templates
+//
+
+//= require 'angular/all'
+//= require_tree ./templates
