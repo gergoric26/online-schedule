@@ -3,14 +3,15 @@
     $locationProvider
       .html5Mode({
         enabled: true,
-        requireBase: false
+        requireBase: true
       });
 
     $stateProvider
-      .state('madison', {
-        url: '/',
-        controller: 'MadisonCtrl as madison',
-        templateUrl: '/templates/madison.html'
+      .state("madison", {
+        url: "/",
+        controller: "MadisonCtrl as madison",
+        //templateUrl: "/templates/madison.html"
+        template: "<h1>hello madison controller</h1>"
       })
       
   }
