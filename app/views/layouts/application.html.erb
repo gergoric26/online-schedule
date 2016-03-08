@@ -5,16 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <base href="/">
+  
 </head>
 <body>
   <div>
     <% if worker_signed_in? %>
-      <%= link_to "Sign Out", destroy_worker_session_path, method: :delete %>
+      <%= link_to "Sign Out Worker", destroy_worker_session_path, method: :delete %>
+    <% end %>
+  </div>
+  <div>
+    <% if boss_signed_in? %>
+      <%= link_to "Sign Out Boss", destroy_boss_session_path, method: :delete %>
     <% end %>
   </div>
 
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
