@@ -5,7 +5,26 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def after_sign_in_path(resource)
+    if resource.is_a?(Worker) 
+      home_schedule_path(resource)
+    end
+  end
+
+  def after_sign_in_path(resource)
+    if resource.is_a?(Boss) 
+      allworkers_index_path(resource)
+    end
+  end
+
   protected
+
+  def authenticate!
+    unless current_boss || current_worker
+      flash[:error] = "You must be logged in to do that"
+      redirect_to home_index_path
+    end
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation) }

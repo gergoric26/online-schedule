@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 
 group :development, :test do

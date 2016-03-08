@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'home#index'
+  root 'home#schedule'
 
   get 'home/index'
 
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   devise_for :workers, controllers: { registrations: 'workers/registrations' }
 
   resources :workers
+  resources :bosses
   get 'allworkers/index'
 
 
