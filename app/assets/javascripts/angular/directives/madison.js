@@ -21,6 +21,11 @@
     $scope.servers.push({});
     }
 
+    // $scope.debug = function() {
+    //   console.log($scope.servers)
+    // }
+
+
   }
 
   angular

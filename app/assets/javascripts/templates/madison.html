@@ -6,26 +6,25 @@
 
     <table class="table table-striped">
       <th>
-      <td>Name</td>
-      <td>Monday</td>
-      <td>Tuesday</td>
-      <td>Wednesday</td>
-      <td>Thursday</td>
-      <td>Friday</td>
-      <td>Saturday</td>
-      <td>Sunday</td>
+        <td>Monday</td>
+        <td>Tuesday</td>
+        <td>Wednesday</td>
+        <td>Thursday</td>
+        <td>Friday</td>
+        <td>Saturday</td>
+        <td>Sunday</td>
       </th>
       <tr  ng-repeat="server in servers track by $index">
-        <td content-editable ng-model="server.name"></td>
-        <td content-editable ng-model="server.monday"></td>
-        <td content-editable ng-model="server.tuesday"></td>
-        <td content-editable ng-model="server.wednesday"></td>
-        <td content-editable ng-model="server.thursday"></td>
-        <td content-editable ng-model="server.friday"></td>
-        <td content-editable ng-model="server.saturday"></td>
-        <td content-editable ng-model="server.sunday"></td>
+        <td contenteditable ng-model="servers[$index].name"></td>
+        <td contenteditable ng-model="servers[$index].monday"></td>
+        <td contenteditable ng-model="servers[$index].tuesday"></td>
+        <td contenteditable ng-model="servers[$index].wednesday"></td>
+        <td contenteditable ng-model="servers[$index].thursday"></td>
+        <td contenteditable ng-model="servers[$index].friday"></td>
+        <td contenteditable ng-model="servers[$index].saturday"></td>
+        <td contenteditable ng-model="servers[$index].sunday"></td>
       </tr>
     </table>
 
-  <md-button class="raised" ng-click="addRow()">Add Row</md-button>
+  <md-button class="raised" ng-click="debug()">Add Row</md-button>
 </div>
