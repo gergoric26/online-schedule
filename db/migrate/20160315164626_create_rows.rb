@@ -1,7 +1,7 @@
 class CreateRows < ActiveRecord::Migration
   def change
     create_table :rows do |t|
-      t.reference :worker
+      t.references :worker
       t.string :monday
       t.string :tuesday
       t.string :wednesday
@@ -12,6 +12,5 @@ class CreateRows < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :rows, :worker
   end
 end
