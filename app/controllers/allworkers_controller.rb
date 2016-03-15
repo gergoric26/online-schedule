@@ -5,4 +5,9 @@ class AllworkersController < ApplicationController
   def index
     @workers = Worker.all
   end
+
+  def api
+    @workers = Worker.all
+    render json: @workers
+  end
 end

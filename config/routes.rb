@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :bosses
   get 'allworkers/index'
 
+  get 'allworkers/api'
+
 
 
 end
