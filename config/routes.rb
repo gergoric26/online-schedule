@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   get 'allworkers/api'
 
+  post 'rows/upsert'
+
+  resources :rows
+
 
 
 end

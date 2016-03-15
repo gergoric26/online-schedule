@@ -6,6 +6,7 @@
 
     <table class="table table-striped">
       <th>
+        <td>Name</td>
         <td>Monday</td>
         <td>Tuesday</td>
         <td>Wednesday</td>
@@ -16,16 +17,16 @@
       </th>
       <tr ng-repeat='row in rows'>
         <td>{{server}}</td>
-        <td><select>
+        <td><select neModel='rows[$index].name'>
           <option ng-repeat="server in servers track by $index">{{server.name}}</option>
         </select></td>
-        <td contenteditable ng-model="servers[$index].monday"></td>
-        <td contenteditable ng-model="servers[$index].tuesday"></td>
-        <td contenteditable ng-model="servers[$index].wednesday"></td>
-        <td contenteditable ng-model="servers[$index].thursday"></td>
-        <td contenteditable ng-model="servers[$index].friday"></td>
-        <td contenteditable ng-model="servers[$index].saturday"></td>
-        <td contenteditable ng-model="servers[$index].sunday"></td>
+        <td contenteditable ng-model="rows[$index].monday"></td>
+        <td contenteditable ng-model="rows[$index].tuesday"></td>
+        <td contenteditable ng-model="rows[$index].wednesday"></td>
+        <td contenteditable ng-model="rows[$index].thursday"></td>
+        <td contenteditable ng-model="rows[$index].friday"></td>
+        <td contenteditable ng-model="rows[$index].saturday"></td>
+        <td contenteditable ng-model="rows[$index].sunday"></td>
       </tr>
     </table>
 

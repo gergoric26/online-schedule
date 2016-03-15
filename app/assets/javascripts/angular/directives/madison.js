@@ -1,7 +1,7 @@
 (function() {
   function MadisonCtrl($scope, $http) {
 
-    $scope.$watch("servers", function(oldVal, newVal){
+    $scope.$watch("rows", function(oldVal, newVal){
       console.log(newVal)
     })
 
@@ -32,6 +32,8 @@
       $scope.servers = error.data
       // console.log(error)
     });
+
+    
 
    //  $scope.data = {
    //  repeatSelect: null,
