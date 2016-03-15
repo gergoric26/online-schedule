@@ -13,12 +13,9 @@ angular.module("editable", [])
       // template: '<div contenteditable ng-model="ngModel">{{ngModel}}</div>',
       // scope: {ngModel: '='},
       require: 'ngModel',
-      link: function(scope, element, attrs, ngModel, http) {
+      link: function(scope, element, attrs, ngModel) {
 
-        // $http({
-        //   method: 'GET',
-        //   url: '/someUrl'
-        // });
+
 
         // scope.$watch('ngModel', function(oldVal, newVal){
         //   console.log(newVal)
@@ -33,7 +30,7 @@ angular.module("editable", [])
 
         // // Listen for change events to enable binding
         element.bind('blur keyup change', function() {
-          $http.get(url, scope)
+          // $http.get(url, scope)
           scope.$apply(read);
         });
         // read(); // initialize
@@ -46,6 +43,8 @@ angular.module("editable", [])
         //   if( attrs.stripBr && html == '<br>' ) {
         //     html = '';
         //   }
+
+          
            ngModel.$setViewValue(html);
         }
       }

@@ -14,8 +14,11 @@
         <td>Saturday</td>
         <td>Sunday</td>
       </th>
-      <tr  ng-repeat="server in servers track by $index">
-        <td contenteditable ng-model="servers[$index].name"></td>
+      <tr ng-repeat='row in rows'>
+        <td>{{server}}</td>
+        <td><select>
+          <option ng-repeat="server in servers track by $index">{{server.name}}</option>
+        </select></td>
         <td contenteditable ng-model="servers[$index].monday"></td>
         <td contenteditable ng-model="servers[$index].tuesday"></td>
         <td contenteditable ng-model="servers[$index].wednesday"></td>
@@ -28,3 +31,8 @@
 
   <md-button class="raised" ng-click="debug()">Add Row</md-button>
 </div>
+
+<!-- <tr  ng-repeat="server in servers track by $index">
+        <td><select name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">
+          <option ng-repeat="option in data.availableOptions" value="{{option.id}}" contenteditable ng-model="servers[$index].name"></option>
+        </select></td> -->

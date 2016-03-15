@@ -1,11 +1,11 @@
 (function() {
-  function MadisonCtrl($scope) {
+  function MadisonCtrl($scope, $http) {
 
     $scope.$watch("servers", function(oldVal, newVal){
       console.log(newVal)
     })
 
-    $scope.servers = [
+    $scope.rows = [
     {
       name: "Dean Gergoric",
       monday: "off",
@@ -18,8 +18,27 @@
     }]
     
     $scope.addRow = function() {
-    $scope.servers.push({});
+    $scope.rows.push({});
     }
+
+    $http({
+      method: 'GET',
+      url: '/allworkers/api'
+    }).then(function(results){
+      $scope.servers = results.data
+      // console.log(results)
+    },
+    function(error){
+      $scope.servers = error.data
+      // console.log(error)
+    });
+
+   //  $scope.data = {
+   //  repeatSelect: null,
+   //  availableOptions: [
+   //    { }
+   //  ],
+   // };
 
     // $scope.debug = function() {
     //   console.log($scope.servers)
