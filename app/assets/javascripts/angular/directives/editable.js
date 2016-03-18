@@ -11,7 +11,7 @@ angular.module("editable", [])
       // replace: true, // get a hold of NgModelController
       // controller: 'editableExample',
       // template: '<div contenteditable ng-model="ngModel">{{ngModel}}</div>',
-      // scope: {ngModel: '='},
+      // scope: {rowUpdate: ''},
       require: 'ngModel',
       link: function(scope, element, attrs, ngModel) {
 
@@ -44,7 +44,7 @@ angular.module("editable", [])
         //     html = '';
         //   }
 
-          
+        
            ngModel.$setViewValue(html);
         }
       }
