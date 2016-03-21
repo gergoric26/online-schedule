@@ -43,9 +43,9 @@ angular.module("editable", [])
         //   if( attrs.stripBr && html == '<br>' ) {
         //     html = '';
         //   }
-
-        
            ngModel.$setViewValue(html);
+           scope.$eval(attrs.change);
+
         }
       }
     };

@@ -15,22 +15,22 @@
         <td>Saturday</td>
         <td>Sunday</td>
       </th>
-      <tr ng-repeat='row in rows'>
+      <tr ng-repeat='row in rows track by $index'>
         <td>{{server}}</td>
-        <td><select neModel='rows[$index].name'>
+        <td><select ng-model='rows[$index].name' change="edited(rows[$index])">
           <option ng-repeat="server in servers track by $index">{{server.name}}</option>
         </select></td>
-        <td contenteditable ng-model="rows[$index].monday"></td>
-        <td contenteditable ng-model="rows[$index].tuesday"></td>
-        <td contenteditable ng-model="rows[$index].wednesday"></td>
-        <td contenteditable ng-model="rows[$index].thursday"></td>
-        <td contenteditable ng-model="rows[$index].friday"></td>
-        <td contenteditable ng-model="rows[$index].saturday"></td>
-        <td contenteditable ng-model="rows[$index].sunday"></td>
+        <td contenteditable ng-model="rows[$index].monday" change="edited(rows[$index])"></td>
+        <td contenteditable ng-model="rows[$index].tuesday" change="edited(rows[$index])"></td>
+        <td contenteditable ng-model="rows[$index].wednesday" change="edited(rows[$index])"></td>
+        <td contenteditable ng-model="rows[$index].thursday" change="edited(rows[$index])"></td>
+        <td contenteditable ng-model="rows[$index].friday" change="edited(rows[$index])"></td>
+        <td contenteditable ng-model="rows[$index].saturday" change="edited(rows[$index])"></td>
+        <td contenteditable ng-model="rows[$index].sunday" change="edited(rows[$index])"></td>
       </tr>
     </table>
 
-  <md-button class="raised" ng-click="debug()">Add Row</md-button>
+  <md-button class="raised" ng-click="addRow()">Add Row</md-button>
 </div>
 
 <!-- <tr  ng-repeat="server in servers track by $index">
