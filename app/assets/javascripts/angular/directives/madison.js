@@ -18,6 +18,16 @@
     }]
     
     $scope.addRow = function() {
+    $http({
+      method: 'GET',
+      url: '/rows/new'
+    }).then(function(results){
+      $scope.rows = results.data
+      console.log(results)
+    },
+    function(error){
+      alert(error.data)
+    });
     $scope.rows.push({});
     }
 
@@ -33,6 +43,20 @@
       // console.log(error)
     });
 
+    $scope.edited = function(row) {
+      console.log(row)
+    $http({
+      method: 'POST',
+      url: '/rows/' + row_id,
+      data: $scope.rows
+    }).then(function(results){
+      $scope.rows = results.data
+      console.log(results)
+    },
+    function(error){
+      alert(error.data)
+    });
+    }
     
 
    //  $scope.data = {
